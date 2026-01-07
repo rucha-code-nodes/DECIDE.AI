@@ -1,0 +1,23 @@
+/* src/styles/Toast.css */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #393E46; /* Card Color */
+  color: #DFD0B8;      /* Text Highlight */
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid #948979; /* Accent Border */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  animation: slideIn 0.3s ease-out;
+  z-index: 9999; /* Always on top */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

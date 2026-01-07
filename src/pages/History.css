@@ -1,0 +1,87 @@
+/* src/styles/History.css */
+
+.history-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(148, 137, 121, 0.2);
+  padding-bottom: 1rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  margin-top: 4rem;
+  color: #888;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Grid Layout */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Styling */
+.history-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.history-date {
+  font-size: 0.8rem;
+  color: #948979;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.history-topic {
+  font-size: 1.2rem;
+  color: #DFD0B8;
+  margin-bottom: 0.5rem;
+}
+
+.history-winner {
+  background: rgba(0,0,0,0.2);
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.winner-name {
+  color: #fff;
+  font-weight: bold;
+}
+
+.history-scores {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.score-badge {
+  background: #222831;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #DFD0B8;
+  border: 1px solid #444;
+}

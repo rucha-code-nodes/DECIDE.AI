@@ -1,0 +1,84 @@
+/* RatingSection.css */
+.rating-container {
+  width: 100%;
+}
+
+.comparison-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.rating-card-3d {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(148, 137, 121, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating-card-3d:hover {
+  border-color: #948979;
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.rating-header {
+  text-align: center;
+  color: #DFD0B8;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #948979;
+}
+
+/* Mini Slider Rows */
+.mini-slider-row {
+  margin-bottom: 1.2rem;
+}
+
+.mini-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.mini-value {
+  color: #DFD0B8;
+  font-weight: bold;
+}
+
+.mini-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #222831;
+  border-radius: 3px;
+  outline: none;
+}
+
+.mini-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #948979; /* Accent Color for Ratings */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mini-range::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+  background: #DFD0B8;
+}
+
+/* Laptop View */
+@media (min-width: 768px) {
+  .comparison-columns {
+    grid-template-columns: 1fr 1fr; /* Side by side comparison */
+  }
+}

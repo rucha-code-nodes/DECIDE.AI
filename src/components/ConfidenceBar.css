@@ -1,0 +1,64 @@
+/* ConfidenceBar.css */
+.confidence-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #393E46;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(148, 137, 121, 0.2);
+}
+
+.section-header {
+  margin-bottom: 1rem;
+  color: #DFD0B8;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.confidence-track {
+  height: 20px;
+  background: #222831; /* Dark Background */
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.confidence-fill {
+  height: 100%;
+  transition: width 1s ease-out;
+}
+
+.confidence-fill.left {
+  background: #DFD0B8; /* Winner Color */
+  box-shadow: 0 0 15px rgba(223, 208, 184, 0.3); /* Glow */
+}
+
+.confidence-fill.right {
+  background: #948979; /* Loser Color */
+  opacity: 0.5;
+}
+
+.separator {
+  width: 4px;
+  background: #222831;
+  z-index: 10;
+}
+
+.confidence-caption {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}

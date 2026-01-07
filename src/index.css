@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/styles/main.css */
+
+/* 1. THEME VARIABLES - Based on your palette */
+:root {
+  --bg-dark: #222831;       /* Deep Background */
+  --bg-card: #393E46;       /* Component Surface */
+  --accent: #948979;        /* Borders / Secondary */
+  --text-highlight: #DFD0B8; /* Text / Buttons */
+  
+  --shadow-light: rgba(255, 255, 255, 0.05);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --transition-speed: 0.3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* 2. GLOBAL RESET & TYPOGRAPHY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; /* Modern Font */
+  background-color: var(--bg-dark);
+  color: var(--text-highlight);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+/* 3. LAYOUT UTILITIES */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Pushes footer down */
+  width: 100%;
+  max-width: 1200px; /* Prevents "Empty" look on huge screens */
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 4. MODERN 3D CARD STYLE (Reusable Class) */
+.card-3d {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(148, 137, 121, 0.2); /* Subtle accent border */
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  
+  /* The 3D Shadow Effect */
+  box-shadow: 
+    0 10px 20px var(--shadow-dark),
+    inset 0 1px 1px var(--shadow-light);
+  
+  /* Smooth Movement */
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card-3d:hover {
+  transform: translateY(-5px); /* Moves up slightly */
+  box-shadow: 
+    0 20px 40px var(--shadow-dark),
+    inset 0 1px 1px var(--shadow-light);
+  border-color: var(--accent);
+}
+
+/* 5. BUTTON STYLES */
+.btn-primary {
+  background-color: var(--text-highlight);
+  color: var(--bg-dark);
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, filter 0.2s;
+  box-shadow: 0 4px 0 var(--accent); /* 3D Button feel */
+}
+
+.btn-primary:active {
+  transform: translateY(4px); /* Pushes down when clicked */
+  box-shadow: 0 0 0 var(--accent);
+}
+
+/* 6. RESPONSIVENESS (Mobile First logic) */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .card-3d {
+    padding: 1.5rem;
+  }
+}
+
+/* 7. ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+

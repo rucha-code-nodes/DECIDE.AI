@@ -1,0 +1,72 @@
+/* src/styles/NotFound.css */
+
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+
+/* The Floating 3D Question Mark */
+.lost-visual {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 2rem;
+}
+
+.floating-404 {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #DFD0B8; /* Text Highlight */
+  animation: floatError 3s ease-in-out infinite;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.shadow-404 {
+  width: 60px;
+  height: 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: shrinkShadow 3s ease-in-out infinite;
+  filter: blur(4px);
+}
+
+/* Animations */
+@keyframes floatError {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes shrinkShadow {
+  0%, 100% { width: 60px; opacity: 0.5; }
+  50% { width: 40px; opacity: 0.2; }
+}
+
+/* Typography */
+.error-code {
+  font-size: 5rem;
+  line-height: 1;
+  color: #393E46; /* Subtle Dark Grey */
+  font-weight: bold;
+  margin: 0;
+}
+
+.error-text {
+  font-size: 2rem;
+  color: #DFD0B8;
+  margin-bottom: 1rem;
+}
+
+.error-desc {
+  color: #948979; /* Accent Color */
+  max-width: 400px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}

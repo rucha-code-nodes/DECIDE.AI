@@ -1,0 +1,95 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background-color: #1a1e25; /* Slightly darker than body for contrast */
+  color: #ccc;
+  padding: 4rem 2rem 1rem 2rem;
+  border-top: 4px solid #948979; /* Accent Top Border */
+  margin-top: auto; /* Pushes to bottom if page is short */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; /* Brand takes more space */
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* BRAND COLUMN */
+.footer-logo {
+  color: #DFD0B8;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 300px;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+/* Social Icons 3D Hover */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-3d {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.icon-3d:hover {
+  transform: translateY(-5px) scale(1.2); /* Pop up effect */
+}
+
+/* LINK COLUMNS */
+.footer-links h3 {
+  color: #DFD0B8;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.footer-links a, .footer-links a:visited {
+  display: block;
+  color: #888;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.footer-links a:hover {
+  color: #948979;
+  padding-left: 5px; /* Slide right effect */
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    text-align: center;
+  }
+
+  .footer-desc {
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
